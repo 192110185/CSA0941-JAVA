@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class R192110172 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the number of elements: ");
+        int n = input.nextInt();
+        int lcmResult = 1;
+        int gcdResult = 0;
+        System.out.println("Enter the numbers:");
+        for (int i = 0; i < n; i++) {
+            int num = input.nextInt();
+            lcmResult = lcm(lcmResult, num);
+            gcdResult = gcd(gcdResult, num);
+        }
+        System.out.println("LCM: " + lcmResult);
+        System.out.println("GCD: " + gcdResult);
+        input.close();
+    }
+    static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
+    }
+    static int lcm(int a, int b) {
+        return (a * b) / gcd(a, b);
+    }
+}
