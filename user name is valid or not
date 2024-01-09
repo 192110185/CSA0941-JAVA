@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class R192110172 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a username: ");
+        String username = scanner.nextLine();
+        if (isValidUsername(username)) {
+            System.out.println("Valid username!");
+        } else {
+            System.out.println("Invalid username. Please check the requirements.");
+        }
+        scanner.close();
+    }
+    private static boolean isValidUsername(String username) {
+        int minLength = 5;
+        if (username.length() < minLength) {
+            return false;
+        }
+        return true;
+    }
+}
